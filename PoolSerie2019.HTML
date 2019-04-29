@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="KevinFafard-AutreFichiers/autreScript.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".avs").html('<img src="https://cdn.freebiesupply.com/logos/large/2x/colorado-avalanche-logo.png" class="logo"/>');
+                $(".calgary").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/4/41/Logo_Flames_Calgary.svg/1200px-Logo_Flames_Calgary.svg.png" class="logo"/>').parent().addClass("rienBon");
+                $(".sharks").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/7/79/Logo_Sharks_San_Jos%C3%A9.svg/1257px-Logo_Sharks_San_Jos%C3%A9.svg.png" class="logo"/>');
+                $(".goldenKnights").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/d6/Golden_Knights_de_Vegas.png/220px-Golden_Knights_de_Vegas.png" class="logo"/>').parent().addClass("rienBon");
+                $(".preds").html('<img src="https://upload.wikimedia.org/wikipedia/fr/0/04/Predators_de_Nashville.png" class="logo"/>').parent().addClass("rienBon");;
+                $(".stars").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/9f/Logo_Stars_Dallas.svg/1280px-Logo_Stars_Dallas.svg.png" class="logo"/>');
+                $(".jets").html('<img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Winnipeg_Jets_Logo.svg/1200px-Winnipeg_Jets_Logo.svg.png" class="logo"/>').parent().addClass("rienBon");
+                $(".blues").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/ec/Logo_Blues_Saint-Louis.svg/1200px-Logo_Blues_Saint-Louis.svg.png" class="logo"/>');
+                $(".lightning").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Lightning_de_Tampa_Bay_%28logo%29.svg/1093px-Lightning_de_Tampa_Bay_%28logo%29.svg.png" class="logo"/>').parent().addClass("rienBon");
+                $(".blueJackets").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e4/Logo_Blue_Jackets_Columbus.svg/1200px-Logo_Blue_Jackets_Columbus.svg.png" class="logo"/>');
+                $(".boston").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/0/03/Logo_Bruins_Boston.svg/1024px-Logo_Bruins_Boston.svg.png" class="logo"/>');
+                $(".toronto").html('<img src="https://ssl.mlse.digital/leafs/sweater/img/logo_history_1970-2015.png" class="logo"/>');
+                $(".capitals").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/9a/Logo_Capitals_Washington.svg/1280px-Logo_Capitals_Washington.svg.png" class="logo"/>').parent().addClass("rienBon");
+                $(".hurricanes").html('<img src="https://sportslogohistory.com/wp-content/uploads/2017/12/carolina_hurricanes_2000-pres.png" class="logo"/>');
+                $(".islanders").html('<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/dc/New_York_Islanders.svg/1055px-New_York_Islanders.svg.png" class="logo"/>');
+                $(".penguins").html('<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Pittsburgh_Penguins_logo_%282016%29.svg/220px-Pittsburgh_Penguins_logo_%282016%29.svg.png" class="logo"/>').parent().addClass("rienBon");;
+                $(".inconnu").html('<img src="https://image.flaticon.com/icons/png/512/36/36601.png" class="logo"/>')
+            });
+        </script>
+        <style>
+            #pointageEntente{
+                width:33%;
+            }
+            #entete{
+                display: flex;
+            }
+            .roundDiv{
+                border-radius: 25px;
+                padding: 20px;
+                margin-bottom: 20px;
+                font-size: 14pt;
+            }
+
+            #legende{
+                display: block;
+                width:33%;
+                margin-top: 30px;
+            }
+            
+            .bonneEquipe{
+                background-color: #23bd23;
+            }
+
+            .toutBon{
+                background-color: #f1ee2b;;
+            }
+
+            .rienBon{
+                background-color: #fb4040;
+            }
+
+            #banniere{
+                width:33%;
+            }
+
+            .mesImages{
+                height: inherit;
+            }
+
+            .tableSelecteur{
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+            }
+
+            .tableSelecteur td, .tableSelecteur th {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+
+            .tableSelecteur td.participant{
+                font-size: 17pt;
+            }
+
+            .tableSelecteur tr:nth-child(even){
+                background-color: #f2f2f2;
+            }
+
+            .tableSelecteur th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: rgb(75, 142, 230);
+                color: white;
+                width: 5%!important;
+                text-align: center;
+            }
+
+            .logo{
+                height: 50px;
+                width: 50px;
+            }
+
+            .tableSelecteur th.participant{
+                background-color: rgb(103, 114, 130);
+            }
+
+            .tableSelecteur th.est{
+                background-color: rgb(201, 20, 20);
+            }
+
+            .tableSelecteur th.ouest{
+                background-color: rgb(42, 62, 238);
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="contenuPage">
+            <div id="entete">
+                <div id="pointageEntente">
+                    <div id="pointage">
+                            <div id="tableRound1" class="tableSelecteur m-3">
+                                    <h1>
+                                        Pointage
+                                    </h1>
+                                    <table>
+                                        <tbody>
+                                        <tr><!--Headers-->
+                                            <th class="participant" style="width: 500px;">Participant</th>
+                                            <th class="">Round 1</th>
+                                            <th class="">Round 2</th>
+                                            <th class="">Round 3</th>
+                                            <th class="">Round 4</th>
+                                            <th class="">Total</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="participant">Marc</td>
+                                            <td>15</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="participant">Patrick</td>
+                                            <td>10</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                        <tr>
+                                            <td class="participant">Daniel</td>
+                                            <td>5</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="participant">Line</td>
+                                            <td>5</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <td class="participant">Mathieu</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                </div>
+                <div id="banniere">
+                        <img src="http://content.sportslogos.net/logos/1/486/full/vh1rmcgy4kvq66dvxj8rg7hhs.gif" class="mesImages" style="width:100%;margin-top: 15%;"/>
+                </div><!--Banniere-->
+                <div id="legende">
+                    <div class="roundDiv toutBon">
+                        Bonne équipe et bon nombre de match (10 points)
+                    </div>
+                    <div class="roundDiv bonneEquipe">
+                        Bonne équipe (5 points)
+                    </div>
+                    <div class="roundDiv rienBon">
+                        Rien de bon (0 point)
+                    </div>
+                </div>
+            </div>
+            <nav><!--Nav des rounds-->
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link " id="round1" data-toggle="tab" href="#nav-round1" role="tab" aria-controls="nav-round1" aria-selected="true">Première ronde</a>
+                    <a class="nav-item nav-link active" id="round2" data-toggle="tab" href="#nav-round2" role="tab" aria-controls="nav-round2" aria-selected="false">Deuxième ronde</a>
+                    <a class="nav-item nav-link" id="round3" data-toggle="tab" href="#nav-round3" role="tab" aria-controls="nav-round3" aria-selected="false">Troisième Ronde</a>
+                    <a class="nav-item nav-link" id="round4" data-toggle="tab" href="#nav-round4" role="tab" aria-controls="nav-round4" aria-selected="false">Quatrième ronde</a>
+                </div>
+            </nav><!--Nav des rounds-->
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade " id="nav-round1" role="tabpanel" aria-labelledby="nav-round1-tab">
+                        <div id="tableRound1" class="tableSelecteur m-3">
+                                <h1>Round 1</h1>
+                                <table>
+                                    <tbody>
+                                    <tr><!--Headers-->
+                                        <th class="participant" style="width: 500px;">Participant</th>
+                                        <th class="ouest"> <span class="avs"></span> VS <span class="calgary"></span></th>
+                                        <th class="ouest"> <span class="sharks"></span> VS <span class="goldenKnights"></span></th>
+                                        <th class="ouest"> <span class="preds"></span> VS <span class="stars"></span></th>
+                                        <th class="ouest"> <span class="jets"></span> VS <span class="blues"></span></th>
+                                        <th class="est"> <span class="lightning"></span> VS <span class="blueJackets"></span></th>
+                                        <th class="est"> <span class="boston"></span> VS <span class="toronto"></span></th>
+                                        <th class="est"> <span class="capitals"></span> VS <span class="hurricanes"></span></th>
+                                        <th class="est"> <span class="islanders"></span> VS <span class="penguins"></span></th>
+                                        <th class=""> Coupe Stanley 1 (4 pts)</th>
+                                        <th class=""> Coupe Stanley 2 (2 pts)</th>
+                                        <th class=""> Coupe Stanley 3 (1 pts)</th>
+                                    </tr><!--Headers-->
+                                    <tr><!--Participant 1-->
+                                        <td class="participant">Patrick</td>
+                                        <td><span class="calgary"></span> en 7</td>
+                                        <td><span class="goldenKnights"></span> en 6</td>
+                                        <td><span class="preds"></span> en 4</td>
+                                        <td class="bonneEquipe"><span class="blues"></span> en 7</td>
+                                        <td class="rienBon"><span class="lightning"></span> en 4</td>
+                                        <td class="bonneEquipe"><span class="boston"></span> en 5</td>
+                                        <td><span class="capitals"></span> en 6</td>
+                                        <td><span class="penguins"></span> en 7</td>
+                                        <td><span class="lightning"></span></td>
+                                        <td><span class="preds"></span></td>
+                                        <td><span class="calgary"></span></td>
+                                    </tr><!--Participant 1-->
+                                    <tr><!--Participant 2-->
+                                        <td class="participant">Marc</td>
+                                        <td><span class="calgary"></span> en 6</td>
+                                        <td><span class="goldenKnights"></span> en 6</td>
+                                        <td><span class="preds"></span> en 7</td>
+                                        <td class="bonneEquipe"><span class="blues"></span> en 7</td>
+                                        <td><span class="lightning"></span> en 6</td>
+                                        <td class="bonneEquipe"><span class="boston"></span> en 5</td>
+                                        <td><span class="capitals"></span> en 5</td>
+                                        <td class="bonneEquipe"><span class="islanders"></span> en 6</td>
+                                        <td><span class="lightning"></span></td>
+                                        <td><span class="calgary"></span></td>
+                                        <td><span class="capitals"></span></td>
+                                    </tr><!--Participant 2-->
+                                    <tr><!--Participant 3-->
+                                        <td class="participant">Mathieu</td>
+                                        <td><span class="calgary"></span> en 5</td>
+                                        <td><span class="goldenKnights"></span> en 5</td>
+                                        <td><span class="preds"></span> en 7</td>
+                                        <td><span class="jets"></span> en 6</td>
+                                        <td class="rienBon"><span class="lightning"></span> en 6</td>
+                                        <td class="rienBon"><span class="toronto"></span> en 7</td>
+                                        <td><span class="capitals"></span> en 4</td>
+                                        <td><span class="penguins"></span> en 7</td>
+                                        <td><span class="calgary"></span></td>
+                                        <td><span class="lightning"></span></td>
+                                        <td><span class="capitals"></span></td>
+                                    </tr><!--Participant 3-->
+                                    <tr><!--Participant 4-->
+                                        <td class="participant">Daniel</td>
+                                        <td><span class="calgary"></span> en 6</td>
+                                        <td><span class="goldenKnights"></span> en 7</td>
+                                        <td><span class="preds"></span> en 7</td>
+                                        <td><span class="jets"></span> en 7</td>
+                                        <td><span class="lightning"></span> en 5</td>
+                                        <td class="bonneEquipe"><span class="boston"></span> en 6</td>
+                                        <td><span class="capitals"></span> en 6</td>
+                                        <td><span class="penguins"></span> en 6</td>
+                                        <td><span class="capitals"></span></td>
+                                        <td><span class="lightning"></span></td>
+                                        <td><span class="calgary"></span></td>
+                                    </tr><!--Participant 4-->
+                                    <tr><!--Participant 5-->
+                                        <td class="participant">Line</td>
+                                        <td><span class="calgary"></span> en 6</td>
+                                        <td><span class="goldenKnights"></span> en 6</td>
+                                        <td><span class="preds"></span> en 6</td>
+                                        <td><span class="jets"></span> en 7</td>
+                                        <td><span class="lightning"></span> en 5</td>
+                                        <td class="bonneEquipe"><span class="boston"></span> en 6</td>
+                                        <td><span class="capitals"></span> en 6</td>
+                                        <td><span class="penguins"></span> en 5</td>
+                                        <td><span class="lightning"></span></td>
+                                        <td><span class="capitals"></span></td>
+                                        <td><span class="preds"></span></td>
+                                    </tr><!--Participant 5-->
+                                    </tbody>
+                                </table>
+                            </div><!--tableRound1-->
+                </div>
+                <div class="tab-pane fade show active" id="nav-round2" role="tabpanel" aria-labelledby="nav-round2-tab">
+                    <div id="tableRound2" class="tableSelecteur m-3">
+                        <h1>Round 2</h1>
+                        <table>
+                            <tbody>
+                            <tr><!--Headers-->
+                                <th class="participant" style="width: 500px;">Participant</th>
+                                <th class="ouest"> <span class="blues"></span> VS <span class="stars"></th>
+                                <th class="ouest"> <span class="avs"></span> VS <span class="sharks"></span></th>
+                                <th class="est"> <span class="islanders"></span> VS <span class="hurricanes"></span></th>
+                                <th class="est"> <span class="blueJackets"></span> VS <span class="boston"></span></th>
+                                <th class=""> Coupe Stanley 1 (4 pts)</th>
+                                <th class=""> Coupe Stanley 2 (2 pts)</th>
+                                <th class=""> Coupe Stanley 3 (1 pts)</th>
+                            </tr><!--Headers-->
+                            <tr><!--Participant 1-->
+                                <td class="participant">Patrick</td>
+                                <td><span class="blues"></span> en 7</td>
+                                <td><span class="avs"></span> en 6</td>
+                                <td><span class="islanders"></span> en 6</td>
+                                <td><span class="blueJackets"></span> en 7</td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="preds"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 1-->
+                            <tr><!--Participant 2-->
+                                <td class="participant">Marc</td>
+                                <td><span class="blues"></span> en 6</td>
+                                <td><span class="sharks"></span> en 7</td>
+                                <td><span class="hurricanes"></span> en 6</td>
+                                <td><span class="blueJackets"></span> en 7</td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 2-->
+                            <tr><!--Participant 3-->
+                                <td class="participant">Mathieu</td>
+                                <td><span class="blues"></span> en 6</td>
+                                <td><span class="avs"></span> en 6</td>
+                                <td><span class="islanders"></span> en 5</td>
+                                <td><span class="blueJackets"></span> en 7</td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 3-->
+                            <tr><!--Participant 4-->
+                                <td class="participant">Daniel</td>
+                                <td><span class="blues"></span> en 7</td>
+                                <td><span class="sharks"></span> en 6</td>
+                                <td><span class="islanders"></span> en 6</td>
+                                <td><span class="blueJackets"></span> en 7</td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 4-->
+                            <tr><!--Participant 5-->
+                                <td class="participant">Line</td>
+                                <td><span class="stars"></span> en 5</td>
+                                <td><span class="sharks"></span> en 5</td>
+                                <td><span class="islanders"></span> en 6</td>
+                                <td><span class="blueJackets"></span> en 7</td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="preds"></span></td>
+                            </tr><!--Participant 5-->
+                            </tbody>
+                        </table>
+                    </div><!--tableRound2-->
+                </div>
+                <div class="tab-pane fade" id="nav-round3" role="tabpanel" aria-labelledby="nav-round3-tab">
+                    <div id="tableRound3" class="tableSelecteur m-3">
+                        <h1>Round 3</h1>
+                        <table>
+                            <tbody>
+                            <tr><!--Headers-->
+                                <th class="participant" style="width: 500px;">Participant</th>
+                                <th class="ouest"> <span class="inconnu"></span> VS <span class="inconnu"></span></th>
+                                <th class="est"> <span class="inconnu"></span> VS <span class="inconnu"></span></th>
+                                <th class=""> Coupe Stanley 1 (4 pts)</th>
+                                <th class=""> Coupe Stanley 2 (2 pts)</th>
+                                <th class=""> Coupe Stanley 3 (1 pts)</th>
+                            </tr><!--Headers-->
+                            <tr><!--Participant 1-->
+                                <td class="participant">Patrick</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="preds"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 1-->
+                            <tr><!--Participant 2-->
+                                <td class="participant">Marc</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 2-->
+                            <tr><!--Participant 3-->
+                                <td class="participant">Mathieu</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 3-->
+                            <tr><!--Participant 4-->
+                                <td class="participant">Daniel</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 4-->
+                            <tr><!--Participant 5-->
+                                <td class="participant">Line</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="preds"></span></td>
+                            </tr><!--Participant 5-->
+                            </tbody>
+                        </table>
+                    </div><!--tableRound3-->
+                </div>
+                <div class="tab-pane fade" id="nav-round4" role="tabpanel" aria-labelledby="nav-round4-tab">
+                    <div id="tableRound4" class="tableSelecteur m-3">
+                        <h1>Round 4</h1>
+                        <table>
+                            <tbody>
+                            <tr><!--Headers-->
+                                <th class="participant" style="width: 500px;">Participant</th>
+                                <th class=""> <span class="inconnu"></span> VS <span class="inconnu"></span></th>
+                                <th class=""> Coupe Stanley 1 (4 pts)</th>
+                                <th class=""> Coupe Stanley 2 (2 pts)</th>
+                                <th class=""> Coupe Stanley 3 (1 pts)</th>
+                            </tr><!--Headers-->
+                            <tr><!--Participant 1-->
+                                <td class="participant">Patrick</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="preds"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 1-->
+                            <tr><!--Participant 2-->
+                                <td class="participant">Marc</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 2-->
+                            <tr><!--Participant 3-->
+                                <td class="participant">Mathieu</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="calgary"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                            </tr><!--Participant 3-->
+                            <tr><!--Participant 4-->
+                                <td class="participant">Daniel</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="calgary"></span></td>
+                            </tr><!--Participant 4-->
+                            <tr><!--Participant 5-->
+                                <td class="participant">Line</td>
+                                <td><span class="inconnu"></span> en </td>
+                                <td><span class="lightning"></span></td>
+                                <td><span class="capitals"></span></td>
+                                <td><span class="preds"></span></td>
+                            </tr><!--Participant 5-->
+                            </tbody>
+                        </table>
+                    </div><!--tableRound4-->
+                </div>
+            </div>
+        </div><!--ContenuPage-->
+    </body>
+</html>
